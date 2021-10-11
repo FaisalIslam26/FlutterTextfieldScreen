@@ -237,7 +237,12 @@ class _TextfieldScreenState extends State<TextfieldScreen> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TextfieldScreen2()));
+                  },
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
@@ -247,28 +252,6 @@ class _TextfieldScreenState extends State<TextfieldScreen> {
                   ),
                 ),
               ],
-            ),
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => TextfieldScreen2()));
-                },
-                icon: Icon(
-                  Icons.arrow_right,
-                  color: Colors.black45,
-                ),
-                label: Text(""),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blueGrey.withOpacity(0.2),
-                  // shadowColor: Colors.black,
-                  elevation: 20,
-                  // shape: RoundedRectangleBorder(
-                  //   borderRadius: BorderRadius.zero),
-                ),
-              ),
             ),
           ],
         ),
