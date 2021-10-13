@@ -17,21 +17,11 @@ class TextfieldScreen extends StatefulWidget {
 
 class _TextfieldScreenState extends State<TextfieldScreen> {
   bool isTap = false;
+  bool isTap2 = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Navigator.push(context,
-        //         MaterialPageRoute(builder: (context) => TextfieldScreen2()));
-        //   },
-        //   icon: Icon(Icons.arrow_right),
-        // ),
-        title: Center(child: Text("Text field Screen")),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -100,14 +90,16 @@ class _TextfieldScreenState extends State<TextfieldScreen> {
             TextField(
               onTap: () {
                 setState(() {
-                  isTap = true;
+                  isTap2 = true;
+                  isTap = false;
                 });
               },
               decoration: InputDecoration(
                 hintText: "Enter Your Password",
-                hintStyle: TextStyle(color: isTap ? Colors.blue : Colors.grey),
+                hintStyle: TextStyle(color: isTap2 ? Colors.blue : Colors.grey),
                 // labelText: "Your Password",
-                labelStyle: TextStyle(color: isTap ? Colors.blue : Colors.grey),
+                labelStyle:
+                    TextStyle(color: isTap2 ? Colors.blue : Colors.grey),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide.none,
 
@@ -128,7 +120,7 @@ class _TextfieldScreenState extends State<TextfieldScreen> {
                 fillColor: Colors.white,
                 prefixIcon: Icon(
                   Icons.lock_open,
-                  color: isTap ? Colors.blue : Colors.grey,
+                  color: isTap2 ? Colors.blue : Colors.grey,
                 ),
               ),
             ),
